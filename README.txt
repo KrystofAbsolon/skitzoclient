@@ -1,3 +1,5 @@
+./gradlew runClient
+
 -------------------------------------------
 Source installation information for modders
 -------------------------------------------
