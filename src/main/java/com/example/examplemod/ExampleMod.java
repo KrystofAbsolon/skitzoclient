@@ -19,6 +19,7 @@ import org.apache.logging.log4j.Logger;
 import com.example.gui.TabGUI;
 import com.example.gui.TabInput;
 import com.example.modules.Flight;
+import com.example.modules.KillAura;
 import com.example.modules.Module;
 import com.example.modules.NoFall;
 import com.example.modules.Sprint;
@@ -34,6 +35,7 @@ public class ExampleMod
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
+        modules.put("KillAura", new KillAura());
         modules.put("Flight", new Flight());
         modules.put("Sprint", new Sprint());
         modules.put("NoFall", new NoFall());
