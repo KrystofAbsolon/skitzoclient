@@ -23,7 +23,7 @@ public class KillAura extends Module {
                 for (Entity e : player.getEntityWorld().loadedEntityList) {
                     if (e instanceof EntityLivingBase && e != player) {
                         double dist = player.getDistance(e);
-                        if (dist <= 6.0 && pc != null) {
+                        if (dist <= 6.0 && player.getCooledAttackStrength(0f) == 1f && pc != null) {
                             pc.attackEntity(player, e);
                         }
                     }
