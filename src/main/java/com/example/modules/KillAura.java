@@ -16,7 +16,7 @@ public class KillAura extends Module {
 
     @Override
     public void onEvent(Object event) {
-        if(event instanceof TickEvent.ClientTickEvent) {
+        if(event instanceof TickEvent.ClientTickEvent && enabled) {
             EntityPlayer player = Minecraft.getMinecraft().player;
             PlayerControllerMP pc = Minecraft.getMinecraft().playerController;
             if(player != null) {
