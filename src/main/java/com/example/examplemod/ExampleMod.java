@@ -20,6 +20,7 @@ import com.example.gui.TabGUI;
 import com.example.gui.TabInput;
 import com.example.modules.Flight;
 import com.example.modules.Module;
+import com.example.modules.NoFall;
 import com.example.modules.Sprint;
 
 @Mod(modid = ExampleMod.MODID, name = ExampleMod.NAME, version = ExampleMod.VERSION)
@@ -35,6 +36,7 @@ public class ExampleMod
     public void init(FMLInitializationEvent event) {
         modules.put("Flight", new Flight());
         modules.put("Sprint", new Sprint());
+        modules.put("NoFall", new NoFall());
 
         MinecraftForge.EVENT_BUS.register(new TabGUI());
         MinecraftForge.EVENT_BUS.register(new TabInput());
