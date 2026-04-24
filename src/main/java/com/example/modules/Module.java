@@ -1,5 +1,6 @@
 package com.example.modules;
 
+import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 public class Module {
@@ -25,7 +26,6 @@ public class Module {
         return enabled;
     }
 
-    public void tick(TickEvent.PlayerTickEvent event) {}
-
+    public void onEvent(Object event) {}
     
 }

@@ -23,13 +23,14 @@ public class TabGUI {
         int x = 5;
         int y = 5;
 
+        mc.fontRenderer.drawString("Skitzo: Oliver Edition", x, y, 0xFFFFFFFF);
         for (int i = 0; i < options.size(); i++) {
 
             int color = (ExampleMod.modules.get(options.get(i)).isEnabled()) ? 0xFF00FF00 : 0xFFFFFFFF;
             if(i == selected)
                 color = 0xFFFFFF00;
 
-            mc.fontRenderer.drawString(options.get(i), x, y + (i * 10), color);
+            mc.fontRenderer.drawString(options.get(i), x, y + ((i+1) * 10), color);
         }
     }
 }

@@ -4,7 +4,9 @@ import java.util.HashMap;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -41,9 +43,17 @@ public class ExampleMod
     @Mod.EventBusSubscriber
     public static class Events {
         @SubscribeEvent
-        public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-            modules.values()
-            .forEach(m -> m.tick(event));
+        public static void onClientTick(TickEvent.ClientTickEvent event) {
+            dispatch(event);
+        }
+
+        @SubscribeEvent
+        public static void onLivingFall(LivingFallEvent event) {
+            dispatch(event);
+        }
+
+        private static void dispatch(Object event) {
+            modules.values().forEach(m -> m.onEvent(event));
         }
     }
 }
